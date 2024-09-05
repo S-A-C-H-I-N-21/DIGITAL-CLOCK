@@ -4,6 +4,7 @@
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
+
 .hero{
     width: 100%;
     min-height: 100vh;
@@ -11,14 +12,17 @@
     color: #fff;
     position: relative;
 }
+
 .container{
-    width: 800px;
+    width: 90%; 
+    max-width: 800px; 
     height: 180px;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
+
 .clock{
     width: 100%;
     height: 100%;
@@ -29,6 +33,7 @@
     justify-content: center;
     backdrop-filter: blur(40px);
 }
+
 .container::before{
     content: '';
     width: 180px;
@@ -40,6 +45,7 @@
     top: -50px;
     z-index: -1;
 }
+
 .container::after{
     content: '';
     width: 180px;
@@ -51,6 +57,7 @@
     bottom: -50px;
     z-index: -1;
 }
+
 .clock span{
     font-size: 80px;
     width: 110px;
@@ -58,23 +65,27 @@
     text-align: center;
     position: relative;
 }
+
 .clock span::after{
-    
     font-size: 16px;
     position: absolute;
     bottom: -5px;
     left: 50%;
     transform: translateX(-50%);
 }
+
 #hrs::after{
     content: 'HOURS';
 }
+
 #min::after{
     content: 'MINS';
 }
+
 #sec::after{
     content: 'SEC';
 }
+
 .watch-link{
     position: fixed;
     bottom: 10%;
@@ -82,4 +93,36 @@
     font-size: 12px;
     text-decoration: none;
     color: #fff;
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        height: 150px; 
+    }
+
+    .clock span {
+        font-size: 50px; 
+        width: 70px; 
+    }
+
+    .clock span::after {
+        font-size: 12px;
+    }
+
+    .container::before, .container::after {
+        display: none; 
+    }
+}
+
+@media (max-width: 480px) {
+    .clock span {
+        font-size: 40px; 
+        width: 60px; 
+    }
+    
+    .clock span::after {
+        font-size: 10px;
+    }
 }
